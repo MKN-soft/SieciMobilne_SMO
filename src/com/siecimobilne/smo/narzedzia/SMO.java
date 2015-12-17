@@ -61,21 +61,9 @@ public class SMO {
      */
     public void dodajZdarzenie(int typ, double czas) {
         //TODO rzucic wyjatkiem albo po prostu upewnic sie ze typ jest 1 lub 2 i zaden inny.
-        //jezeli zdarzenie jest typu pierwszego
-        if (typ == 1) {
-            //Sprawdzanie czy jest wolny kanal
-            for (Kanal aux : kanaly) {
-                if (aux.isWolny()) {
-                    //TODO obsluga zdarzenia przez kanal
-                    return;
-                }
-            }
-            //jesli nie ma wolnego kanalu
-            for (int i = 0; i < L; i++) {
-                if (kolejka[i] != null) {
-                    kolejka[i] = new Zdarzenie(typ, czas);
-                    return;
-                }
+        for (int i = 0; i < L; i++) {
+            if (kolejka[i] == null) {
+                kolejka[i] = new Zdarzenie(typ, czas);
             }
         }
     }

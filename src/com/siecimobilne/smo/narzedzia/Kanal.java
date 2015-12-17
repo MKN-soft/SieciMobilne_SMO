@@ -6,6 +6,11 @@ package com.siecimobilne.smo.narzedzia;
  */
 public class Kanal {
     private boolean wolny = true;
+    private int id;
+
+    public Kanal(int id) {
+        this.id = id;
+    }
 
     public boolean isWolny() {
         return wolny;
