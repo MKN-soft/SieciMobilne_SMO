@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa250704-023c-42ff-a219-c77269e91d9d" name="Default" comment="Fundamenty">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java" afterPath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java" />
     </list>
     <ignored path="SieciMobilne_SMO.iws" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="SMO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.687039">
-              <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.30136988">
+              <caret line="116" column="76" selection-start-line="116" selection-start-column="76" selection-end-line="116" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -49,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -83,9 +84,9 @@
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/System.java" />
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/SMO.java" />
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/Zdarzenie.java" />
-        <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java" />
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/Main.java" />
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Zdarzenie.java" />
+        <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java" />
         <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java" />
       </list>
     </option>
@@ -617,11 +618,12 @@
       <workItem from="1450000474978" duration="119000" />
       <workItem from="1450211010337" duration="1210000" />
       <workItem from="1450309553863" duration="2352000" />
+      <workItem from="1450313790721" duration="1390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3681000" />
+    <option name="totallyTimeSpent" value="5071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="0" width="943" height="1087" extended-state="0" />
@@ -681,6 +683,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Zdarzenie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -752,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Zdarzenie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -768,10 +786,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.687039">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.30136988">
+          <caret line="116" column="76" selection-start-line="116" selection-start-column="76" selection-end-line="116" selection-end-column="76" />
           <folding />
         </state>
       </provider>

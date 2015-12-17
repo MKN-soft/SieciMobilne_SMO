@@ -46,7 +46,7 @@ public class SMO {
 
         //tworzenie obiektow symulujacych kanaly
         for (int i = 0; i < K; i++)
-            this.kanaly[i] = new Kanal();
+            this.kanaly[i] = new Kanal(i+1);
 
         //wstawiamy nieskończoność do tablicy
         for (int i = 0; i < tablica.length; i++)
@@ -80,7 +80,7 @@ public class SMO {
         // Szukamy minimum w tablicy
         Zdarzenie minimum = min(tablica);
 
-        while (t < T) {
+        while (minimum.getCzas() < T) {
             //TODO symulacja
 
             // Sprawdza czy zdarzenie jest typu 1
@@ -89,20 +89,56 @@ public class SMO {
                 // Czy kolejka jest pełna
                 if (l < L) {
                     // Dodaj zdarzenie do kolejki
+                    dodajZdarzenie(minimum.getTyp(), minimum.getCzas());
                     l++;
                     // Kanał obsługi jest pusty
+                    if (czyPustyKanal()) {
+                        // Któryś kanał jest pusty
 
+                        // Przeniesienie zdarzenia z kolejki do kanalu obslugi (FIFO)
+
+                        l--;
+
+                        // Okreslenie momentu konca obslugi zdarzenia przez kanal obslugi
+
+                        // Wstawienie zdarzenia typu II do tablicy zdarzen
+
+                        // TODO Ustalenie momentu przyjscia nastepnego zdarzenia
+                    }
+                    else {
+                        // Wszystkie są zajęte, olewamy zgłoszenie
+
+                        // TODO Ustalenie momentu przyjscia nastepnego zdarzenia
+                    }
                 }
                 else {
                     // Kolejka jest pełna
 
+                    // TODO Ustalenie momentu przyjscia nastepnego zdarzenia
                 }
             }
             // Sprawdza czy zdarzenie jest typu 2
             else {
                 t = minimum.getCzas();
                 // Czy kolejka jest pusta
-                
+                if (l == 0) {
+                    // Kolejka jest pusta
+
+                    // Wstaw "nieskończoność" do tablicy zdarzen typu II
+                }
+                else {
+                    // Kolejka NIE jest pusta
+
+                    // Przeniesienie zdarzenia z kolejki do kanalu obslugi (FIFO)
+
+                    l--;
+
+                    // Okreslenie momentu konca obslugi zdarzenia przez kanal obslugi
+
+                    // Wstawienie zdarzenia typu II do tablicy zdarzen
+
+                    // TODO Ustalenie momentu przyjscia nastepnego zdarzenia
+                }
             }
         }
 
@@ -116,6 +152,15 @@ public class SMO {
             }
         }
         return wynik;
+    }
+
+    private boolean czyPustyKanal() {
+        for (int i = 0; i < kanaly.length; i++) {
+            if (kanaly[i].isWolny()) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
