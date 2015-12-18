@@ -26,6 +26,8 @@ public class SMO {
 
     private PrintWriter zapis;//do zapisu czasów
 
+    private Zdarzenie minimum;//najmniejsze zdarzenie w tablicy zdarzen
+
     public SMO() {
         Scanner odczyt = new Scanner(System.in);
         System.out.println("Podaj lambda: ");
@@ -99,28 +101,27 @@ public class SMO {
     public void simulate() {
 
         // Tworzymy pierwsze "zdarzenie"
-        System.out.println("lambda: " + this.lambda);
         Zdarzenie zdarzenie = new Zdarzenie(1, 1.0/this.lambda);
         tablica[0] = zdarzenie;
 
 
         // Szukamy minimum w tablicy
-        Zdarzenie minimum = min(tablica);
+        this.minimum = min(tablica);
         int licznik = 0;
-        while (minimum.getCzas() < T) {
-            minimum = min(tablica);
+        while (this.minimum.getCzas() < T) {
+            this.minimum = min(tablica);
             System.out.println(tablica[0].getCzas() + "\t" + tablica[1].getCzas());
-            System.out.println("Przejscie: "+ licznik);
+            //System.out.println("Przejscie: "+ licznik);
             //TODO symulacja
 
             // Sprawdza czy zdarzenie jest typu 1
-            if (minimum.getTyp() == 1) {
-                t = minimum.getCzas();
+            if (this.minimum.getTyp() == 1) {
+                t = this.minimum.getCzas();
                 zapiszCzas(t,1);
                 // Czy kolejka jest pełna
                 if (l < L) {
                     // Dodaj zdarzenie do kolejki
-                    dodajZdarzenieDoKolejki(minimum.getTyp(), minimum.getCzas());
+                    dodajZdarzenieDoKolejki(this.minimum.getTyp(), this.minimum.getCzas());
                     l++;
                     // Kanał obsługi jest pusty
                     if (czyPustyKanal()) {
@@ -154,11 +155,11 @@ public class SMO {
                 }
             }
             // Sprawdza czy zdarzenie jest typu 2
-            else if (minimum.getTyp() == 2){
-                t = minimum.getCzas();
+            else{
+                t = this.minimum.getCzas();
                 zapiszCzas(t,2);
                 // Czy kolejka jest pusta
-                if (l == 0) {
+                if (l == 0 && czyPustyKanal()) {
                     // Kolejka jest pusta
 
                     // Wstaw "nieskończoność" do tablicy zdarzen typu II
