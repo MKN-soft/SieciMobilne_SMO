@@ -1,5 +1,6 @@
 package com.siecimobilne.smo.narzedzia;
 
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -28,6 +29,11 @@ public class SMO {
 
     private Zdarzenie minimum;//najmniejsze zdarzenie w tablicy zdarzen
 
+    private Wykresy wykresy; // Pobiera dane do rysowania wykresów
+
+    private int liczba_zgloszen_przybylych = 0;
+    private int liczba_zgloszen_obsluzonych = 0;
+
     public SMO() {
         Scanner odczyt = new Scanner(System.in);
         System.out.println("Podaj lambda: ");
@@ -47,6 +53,13 @@ public class SMO {
         this.tablica = new Zdarzenie[this.K + 1];
 
         this.kanaly = new Kanal[K];
+
+        try {
+            this.wykresy = new Wykresy();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Błąd otwarcia pliku!");
+        }
 
         try{
             this.zapis = new PrintWriter("out.txt");
@@ -76,6 +89,8 @@ public class SMO {
         for (int i = 0; i < L; i++) {
             if (kolejka[i] == null) {
                 kolejka[i] = new Zdarzenie(typ, czas);
+                // poczebny break, inaczej zapełni kolejkę klonami zdarzenia...
+                break;
             }
         }
     }
@@ -102,13 +117,16 @@ public class SMO {
 
         // Tworzymy pierwsze "zdarzenie"
         Zdarzenie zdarzenie = new Zdarzenie(1, 1.0/this.lambda);
+        this.liczba_zgloszen_przybylych++;
         tablica[0] = zdarzenie;
-
+        // Dodanie do wykresu 1
+        wykresy.dodajDoWykresu1(1.0/this.lambda);
 
         // Szukamy minimum w tablicy
         this.minimum = min(tablica);
         int licznik = 0;
-        while (this.minimum.getCzas() < T) {
+
+        while (t < T) {
             this.minimum = min(tablica);
             System.out.println(tablica[0].getCzas() + "\t" + tablica[1].getCzas());
             //System.out.println("Przejscie: "+ licznik);
@@ -184,7 +202,8 @@ public class SMO {
             }
             licznik++;
         }
-    this.zapis.close();
+        this.zapis.close();
+        this.wykresy.close();
     }
 
     private Zdarzenie min(Zdarzenie[] tablica) {
@@ -220,6 +239,7 @@ public class SMO {
         for (int i = 0; i < kanaly.length; i++) {
             if (kanaly[i].isWolny()) {
                 kanaly[i].dodajZdarzenie(typ,czas);
+                this.liczba_zgloszen_obsluzonych++;
                 return;
             }
         }
@@ -232,6 +252,19 @@ public class SMO {
 
     public void ustalenieMomentuPrzyjscia(){
         this.tablica[0] = new Zdarzenie(1,this.tablica[0].getCzas() + (1.0/lambda));
+        this.liczba_zgloszen_przybylych++;
+
+        // Dodanie do wykresu 1
+        wykresy.dodajDoWykresu1(this.t);
+        // Dodanie do wykresu 2
+        wykresy.dodajDoWykresu2(this.l, this.t);
+        // Dodanie do wykresu 3
+        wykresy.dodajDoWykresu3(this.kanaly, this.t);
+        // Dodanie do wykresu 4
+        wykresy.dodajDoWykresu4(this.liczba_zgloszen_przybylych, this.t);
+        // Dodanie do wykresu 5
+        wykresy.dodajDoWykresu5(this.liczba_zgloszen_obsluzonych, this.t);
+
         return;
     }
 }
