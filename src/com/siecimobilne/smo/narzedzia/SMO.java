@@ -2,7 +2,9 @@ package com.siecimobilne.smo.narzedzia;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Random;
 import java.util.Scanner;
+import java.lang.Math;
 
 /**
  * Klasa symulujaca SMO
@@ -34,6 +36,8 @@ public class SMO {
     private int liczba_zgloszen_przybylych = 0;
     private int liczba_zgloszen_obsluzonych = 0;
 
+    private Random generator;
+
     public SMO() {
         Scanner odczyt = new Scanner(System.in);
         System.out.println("Podaj lambda: ");
@@ -44,7 +48,7 @@ public class SMO {
 
         this.L = 10;
         this.T = 10;
-        this.K = 1;
+        this.K = 2;
 
         this.t = 0.0;
         this.l = 0;
@@ -114,7 +118,8 @@ public class SMO {
      * Petla WHILE  sumulujaca SMO.
      */
     public void simulate() {
-
+        //generator do generowania liczb losowych
+        this.generator = new Random();
         // Tworzymy pierwsze "zdarzenie"
         Zdarzenie zdarzenie = new Zdarzenie(1, 1.0/this.lambda);
         this.liczba_zgloszen_przybylych++;
@@ -251,20 +256,28 @@ public class SMO {
     }
 
     public void ustalenieMomentuPrzyjscia(){
-        this.tablica[0] = new Zdarzenie(1,this.tablica[0].getCzas() + (1.0/lambda));
-        this.liczba_zgloszen_przybylych++;
+        //Losowanie lambda i mi zgodnie z rozkladem Poissona
+        double losowaLiczba = (this.generator.nextInt(99)+1)/100.0;//losowa liczba z przedziału (0,1)
+        double deltaLambda = (-1.0/this.lambda * Math.log(losowaLiczba));
+        losowaLiczba = (this.generator.nextInt(100)+1)/100.0;
+        double deltaMi = (-1.0/this.mi * Math.log(losowaLiczba));
 
+        //Wstawienie zcasu przybycia kolejnego zdarzenia do tablicy
+        this.tablica[0] = new Zdarzenie(1,this.tablica[0].getCzas() + deltaLambda);
+        //System.out.println("losowe lambda: " + deltaLambda);
+        //System.out.println("losowe mi: " + deltaMi);
         // Dodanie do wykresu 1
         wykresy.dodajDoWykresu1(this.t);
         // Dodanie do wykresu 2
         wykresy.dodajDoWykresu2(this.l, this.t);
         // Dodanie do wykresu 3
         wykresy.dodajDoWykresu3(this.kanaly, this.t);
-        // Dodanie do wykresu 4
-        wykresy.dodajDoWykresu4(this.liczba_zgloszen_przybylych, this.t);
-        // Dodanie do wykresu 5
-        wykresy.dodajDoWykresu5(this.liczba_zgloszen_obsluzonych, this.t);
+        // Dodanie do wykresu 4 - zgłoszenia przybyłe
+        wykresy.dodajDoWykresu4(this.liczba_zgloszen_przybylych, Math.round(this.t*100.0)/100.0);
+        // Dodanie do wykresu 5 - Zgłoszenia obsłużone
+        wykresy.dodajDoWykresu5(this.liczba_zgloszen_obsluzonych, Math.round((this.t+deltaMi)*100.0)/100.0);
 
+        this.liczba_zgloszen_przybylych++;
         return;
     }
 }

@@ -12,23 +12,28 @@ public class Kanal {
     public Kanal(int id) {
         this.id = id;
         zdarzenie  = null;
+        this.wolny = true;
     }
 
     public void dodajZdarzenie(int typ, double czas){
         this.zdarzenie = new Zdarzenie(typ,czas);
+        this.wolny = false;
     }
 
     public void usunZdarzenie(){
         this.zdarzenie = null;
+        this.wolny = true;
     }
     public boolean isWolny() {
-        if (this.zdarzenie == null)
-            return wolny;
-        else
-            return false;
+        return this.wolny;
     }
 
     public Zdarzenie getZdarzenie() {
         return zdarzenie;
+    }
+
+    public void setZdarzenie(Zdarzenie zdarzenie) {
+        this.zdarzenie = zdarzenie;
+        this.wolny = false;
     }
 }
