@@ -6,9 +6,14 @@ package main;
 public class Main {
 
     public static void main(String [] args) {
-        SMO smo = new SMO();
+        Klaster klaster = new Klaster();
+        klaster.simulate();
+    }
 
-        smo.simulate();
+    public static void clear() {
+        for(int clear = 0; clear < 1000; clear++) {
+            System.out.println("\b") ;
+        }
     }
 
 }

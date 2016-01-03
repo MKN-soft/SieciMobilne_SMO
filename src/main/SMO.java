@@ -3,6 +3,7 @@ package main;
 import main.narzedzia.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -10,6 +11,8 @@ import java.util.Scanner;
  * Created by MSI on 2015-12-20.
  */
 public class SMO {
+
+    private int IdStacji;
 
     private double lambda;
     private double mi;
@@ -30,9 +33,13 @@ public class SMO {
     private RozkladPoissona rozkladPoissona;
 
     public int liczba_zgloszen_przybylych = 0;
-    public int liczba_zgloszen_obsluzonych = 0;
 
-    public SMO() {
+    public SMO(int IdStacji) {
+        this.IdStacji = IdStacji;
+
+        System.out.println("Stacja ID_" + this.IdStacji);
+        System.out.println(" ");
+
         Scanner odczyt = new Scanner(System.in);
         System.out.println("Podaj lambda: ");
         this.lambda = odczyt.nextDouble();
@@ -40,14 +47,19 @@ public class SMO {
         System.out.println("Podaj mi: ");
         this.mi = odczyt.nextDouble();
 
-        this.L = 10;
-        this.T = 10;
-        this.K = 3;
+        System.out.println("Podaj T: ");
+        this.T = odczyt.nextInt();
+
+        System.out.println("Podaj L: ");
+        this.L = odczyt.nextInt();
+
+        System.out.println("Podaj K: ");
+        this.K = odczyt.nextInt();
 
         this.t = 0.0;
 
         try {
-            this.wykresy = new Wykresy();
+            this.wykresy = new Wykresy(this.IdStacji);
             this.wykresy.dodajDoWykresu(this.lambda, this.mi, this.K);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -102,12 +114,18 @@ public class SMO {
                     else {
                         // Wszystkie kanały są zajęte, zostawiamy zgłoszenie w kolejce
 
+                        // Dodanie do wykresu 6 - Liczba odrzuconych zdarzeń
+                        this.wykresy.dodajDoWykresu6(1, this.tablicaZdarzen.getTypI().getCzas());
+
                         // Ustalenie momentu przyjscia nastepnego zdarzenia
                         ustalenieMomentuPrzyjscia();
                     }
                 }
                 else {
                     // Kolejka jest pełna
+
+                    // Dodanie do wykresu 6 - Liczba odrzuconych zdarzeń
+                    this.wykresy.dodajDoWykresu6(1, this.tablicaZdarzen.getTypI().getCzas());
 
                     // Ustalenie momentu przyjscia nastepnego zdarzenia
                     ustalenieMomentuPrzyjscia();
@@ -119,10 +137,12 @@ public class SMO {
 
                 // Zwróc id kanału
                 int id = this.kanaly.getIdKanalu(this.minimum);
-                this.wykresy.dodajDoWykresu5(1, this.kanaly.getKanal(id).getKoniecObslugi());
+
                 // Zwolnij kanał
                 this.kanaly.zwolnij(id);
 
+                // Dodanie do wykresu 5 - Zgłoszenia obsłużone
+                this.wykresy.dodajDoWykresu5(1, this.tablicaZdarzen.getTypII().getCzas());
 
                 // Czy kolejka jest pusta
                 if (this.kolejka.getCount() == 0) {
@@ -152,7 +172,7 @@ public class SMO {
             }
         }
 
-        //this.sum();
+        this.sum();
         this.close();
     }
 
@@ -178,9 +198,6 @@ public class SMO {
 
         // Dodanie do wykresu 4 - zgłoszenia przybyłe
         this.wykresy.dodajDoWykresu4(1, this.tablicaZdarzen.getTypI().getCzas());
-//
-//        // Dodanie do wykresu 5 - Zgłoszenia obsłużone
-//        this.wykresy.dodajDoWykresu5(1, this.tablicaZdarzen.getTypI().getCzas());
     }
 
     private void close() {
