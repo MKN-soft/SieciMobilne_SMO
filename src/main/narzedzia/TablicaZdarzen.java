@@ -40,4 +40,8 @@ public class TablicaZdarzen {
     public Zdarzenie getTypI() {
         return this.tablica[0];
     }
+
+    public Zdarzenie getTypII() {
+        return this.tablica[1];
+    }
 }

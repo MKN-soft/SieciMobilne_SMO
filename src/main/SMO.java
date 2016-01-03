@@ -42,7 +42,7 @@ public class SMO {
 
         this.L = 10;
         this.T = 10;
-        this.K = 3;
+        this.K = 1;
 
         this.t = 0.0;
 
@@ -86,9 +86,9 @@ public class SMO {
                         Zdarzenie temp = this.kolejka.usun();
 
                         // Okreslenie momentu konca obslugi zdarzenia przez kanal obslugi
-                        //double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
-                        double deltaMi = rozkladPoissona.mi(this.mi);
-                        double koniecObslugi = round(this.t + deltaMi, 2);
+                        double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
+                        //double deltaMi = rozkladPoissona.mi(this.mi);
+                        //double koniecObslugi = round(this.t + deltaMi, 2);
 
                         // Dodaj do kanału
                         int id = this.kanaly.dodaj(temp, koniecObslugi);
@@ -102,12 +102,18 @@ public class SMO {
                     else {
                         // Wszystkie kanały są zajęte, zostawiamy zgłoszenie w kolejce
 
+                        // Dodanie do wykresu 6 - Liczba odrzuconych zdarzeń
+                        this.wykresy.dodajDoWykresu6(1, this.tablicaZdarzen.getTypI().getCzas());
+
                         // Ustalenie momentu przyjscia nastepnego zdarzenia
                         ustalenieMomentuPrzyjscia();
                     }
                 }
                 else {
                     // Kolejka jest pełna
+
+                    // Dodanie do wykresu 6 - Liczba odrzuconych zdarzeń
+                    this.wykresy.dodajDoWykresu6(1, this.tablicaZdarzen.getTypI().getCzas());
 
                     // Ustalenie momentu przyjscia nastepnego zdarzenia
                     ustalenieMomentuPrzyjscia();
@@ -119,10 +125,12 @@ public class SMO {
 
                 // Zwróc id kanału
                 int id = this.kanaly.getIdKanalu(this.minimum);
-                this.wykresy.dodajDoWykresu5(1, this.kanaly.getKanal(id).getKoniecObslugi());
+
                 // Zwolnij kanał
                 this.kanaly.zwolnij(id);
 
+                // Dodanie do wykresu 5 - Zgłoszenia obsłużone
+                this.wykresy.dodajDoWykresu5(1, this.tablicaZdarzen.getTypII().getCzas());
 
                 // Czy kolejka jest pusta
                 if (this.kolejka.getCount() == 0) {
@@ -137,9 +145,9 @@ public class SMO {
                     Zdarzenie temp = this.kolejka.usun();
 
                     // Określenie momentu końca obsługi zdarzenia przez kanał obsługi
-                    //double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
-                    double deltaMi = rozkladPoissona.mi(this.mi);
-                    double koniecObslugi = round(this.t + deltaMi, 2);
+                    double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
+                    //double deltaMi = rozkladPoissona.mi(this.mi);
+                    //double koniecObslugi = round(this.t + deltaMi, 2);
 
                     this.kanaly.dodaj(id, temp, koniecObslugi);
 
@@ -152,14 +160,14 @@ public class SMO {
             }
         }
 
-        //this.sum();
+        this.sum();
         this.close();
     }
 
     private void ustalenieMomentuPrzyjscia() {
-        //this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round((this.tablicaZdarzen.getTypI().getCzas() + (1.0) / this.lambda), 2)));
-        double deltaLambda = rozkladPoissona.lambda(this.lambda);
-        this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round( (this.tablicaZdarzen.getTypI().getCzas() + deltaLambda), 2 ) ));
+        this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round((this.tablicaZdarzen.getTypI().getCzas() + (1.0) / this.lambda), 2)));
+        //double deltaLambda = rozkladPoissona.lambda(this.lambda);
+        //this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round( (this.tablicaZdarzen.getTypI().getCzas() + deltaLambda), 2 ) ));
 
         this.rysujWykresy();
 
@@ -178,9 +186,6 @@ public class SMO {
 
         // Dodanie do wykresu 4 - zgłoszenia przybyłe
         this.wykresy.dodajDoWykresu4(1, this.tablicaZdarzen.getTypI().getCzas());
-//
-//        // Dodanie do wykresu 5 - Zgłoszenia obsłużone
-//        this.wykresy.dodajDoWykresu5(1, this.tablicaZdarzen.getTypI().getCzas());
     }
 
     private void close() {
