@@ -2,18 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be8465f-0d72-4aa8-9720-8072bfbb042b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/Klaster.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Poligon/com/siecimobilne/smo/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Poligon/com/siecimobilne/smo/narzedzia/Kanal.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Poligon/com/siecimobilne/smo/narzedzia/SMO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Poligon/com/siecimobilne/smo/narzedzia/Wykresy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Poligon/com/siecimobilne/smo/narzedzia/Zdarzenie.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Kanal.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Wykresy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/Zdarzenie.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres4.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres5.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wykres6.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Poligon/main/Main.class" afterPath="$PROJECT_DIR$/out/production/Poligon/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Poligon/main/SMO.class" afterPath="$PROJECT_DIR$/out/production/Poligon/main/SMO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Poligon/main/narzedzia/Wykresy$Para.class" afterPath="$PROJECT_DIR$/out/production/Poligon/main/narzedzia/Wykresy$Para.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Poligon/main/narzedzia/Wykresy.class" afterPath="$PROJECT_DIR$/out/production/Poligon/main/narzedzia/Wykresy.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SMO.java" afterPath="$PROJECT_DIR$/src/main/SMO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/narzedzia/TablicaZdarzen.java" afterPath="$PROJECT_DIR$/src/main/narzedzia/TablicaZdarzen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/narzedzia/Wykresy.java" afterPath="$PROJECT_DIR$/src/main/narzedzia/Wykresy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres.txt" afterPath="$PROJECT_DIR$/wykres.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres1.txt" afterPath="$PROJECT_DIR$/wykres1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres2.txt" afterPath="$PROJECT_DIR$/wykres2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres3.txt" afterPath="$PROJECT_DIR$/wykres3.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres4.txt" afterPath="$PROJECT_DIR$/wykres4.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wykres5.txt" afterPath="$PROJECT_DIR$/wykres5.txt" />
     </list>
     <ignored path="Poligon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,18 +51,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SMO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/SMO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TablicaZdarzen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/narzedzia/TablicaZdarzen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,7 +68,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Klaster.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Klaster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5889764">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -97,14 +110,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wykresy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Wykresy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/narzedzia/Wykresy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16062993">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
               <folding>
-                <element signature="e#3091#3092#0" expanded="true" />
-                <element signature="e#3147#3148#0" expanded="true" />
+                <element signature="e#3481#3482#0" expanded="true" />
+                <element signature="e#3537#3538#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,13 +161,16 @@
         <option value="$PROJECT_DIR$/src/main/TablicaZdarzen.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/Zdarzenie.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/Kanal.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/Kolejka.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/RozkladPoissona.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/Kanaly.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/TablicaZdarzen.java" />
-        <option value="$PROJECT_DIR$/src/main/SMO.java" />
         <option value="$PROJECT_DIR$/src/main/narzedzia/Wykresy.java" />
+        <option value="$PROJECT_DIR$/src/main/SMO.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/Klaster.java" />
+        <option value="$PROJECT_DIR$/src/com/siecimobilne/smo/narzedzia/SMO.java" />
+        <option value="$PROJECT_DIR$/src/main/Klaster.java" />
       </list>
     </option>
   </component>
@@ -180,7 +196,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -205,8 +221,48 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SieciMobilne_SMO">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Poligon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Poligon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Poligon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Poligon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -669,12 +725,12 @@
       <workItem from="1450688429244" duration="369000" />
       <workItem from="1450689821099" duration="1277000" />
       <workItem from="1450902099326" duration="58000" />
-      <workItem from="1451814819830" duration="1566000" />
+      <workItem from="1451814819830" duration="3417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20135000" />
+    <option name="totallyTimeSpent" value="21986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -764,8 +820,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,8 +884,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -892,8 +948,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -956,8 +1012,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,8 +1068,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,8 +1124,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1102,8 +1158,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1171,6 +1227,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/narzedzia/Wykresy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding>
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3537#3538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/SMO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27716535">
+          <caret line="26" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="216" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/narzedzia/TablicaZdarzen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1182,32 +1267,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Klaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5889764">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SMO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/narzedzia/Wykresy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16062993">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-          <folding>
-            <element signature="e#3091#3092#0" expanded="true" />
-            <element signature="e#3147#3148#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

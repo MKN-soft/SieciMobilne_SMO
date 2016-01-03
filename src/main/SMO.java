@@ -3,6 +3,7 @@ package main;
 import main.narzedzia.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -10,6 +11,8 @@ import java.util.Scanner;
  * Created by MSI on 2015-12-20.
  */
 public class SMO {
+
+    private int IdStacji;
 
     private double lambda;
     private double mi;
@@ -30,9 +33,13 @@ public class SMO {
     private RozkladPoissona rozkladPoissona;
 
     public int liczba_zgloszen_przybylych = 0;
-    public int liczba_zgloszen_obsluzonych = 0;
 
-    public SMO() {
+    public SMO(int IdStacji) {
+        this.IdStacji = IdStacji;
+
+        System.out.println("Stacja ID_" + this.IdStacji);
+        System.out.println(" ");
+
         Scanner odczyt = new Scanner(System.in);
         System.out.println("Podaj lambda: ");
         this.lambda = odczyt.nextDouble();
@@ -40,14 +47,19 @@ public class SMO {
         System.out.println("Podaj mi: ");
         this.mi = odczyt.nextDouble();
 
-        this.L = 10;
-        this.T = 10;
-        this.K = 1;
+        System.out.println("Podaj T: ");
+        this.T = odczyt.nextInt();
+
+        System.out.println("Podaj L: ");
+        this.L = odczyt.nextInt();
+
+        System.out.println("Podaj K: ");
+        this.K = odczyt.nextInt();
 
         this.t = 0.0;
 
         try {
-            this.wykresy = new Wykresy();
+            this.wykresy = new Wykresy(this.IdStacji);
             this.wykresy.dodajDoWykresu(this.lambda, this.mi, this.K);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -86,9 +98,9 @@ public class SMO {
                         Zdarzenie temp = this.kolejka.usun();
 
                         // Okreslenie momentu konca obslugi zdarzenia przez kanal obslugi
-                        double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
-                        //double deltaMi = rozkladPoissona.mi(this.mi);
-                        //double koniecObslugi = round(this.t + deltaMi, 2);
+                        //double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
+                        double deltaMi = rozkladPoissona.mi(this.mi);
+                        double koniecObslugi = round(this.t + deltaMi, 2);
 
                         // Dodaj do kanału
                         int id = this.kanaly.dodaj(temp, koniecObslugi);
@@ -145,9 +157,9 @@ public class SMO {
                     Zdarzenie temp = this.kolejka.usun();
 
                     // Określenie momentu końca obsługi zdarzenia przez kanał obsługi
-                    double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
-                    //double deltaMi = rozkladPoissona.mi(this.mi);
-                    //double koniecObslugi = round(this.t + deltaMi, 2);
+                    //double koniecObslugi = round(this.t + (1.0 / this.mi), 2);
+                    double deltaMi = rozkladPoissona.mi(this.mi);
+                    double koniecObslugi = round(this.t + deltaMi, 2);
 
                     this.kanaly.dodaj(id, temp, koniecObslugi);
 
@@ -165,9 +177,9 @@ public class SMO {
     }
 
     private void ustalenieMomentuPrzyjscia() {
-        this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round((this.tablicaZdarzen.getTypI().getCzas() + (1.0) / this.lambda), 2)));
-        //double deltaLambda = rozkladPoissona.lambda(this.lambda);
-        //this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round( (this.tablicaZdarzen.getTypI().getCzas() + deltaLambda), 2 ) ));
+        //this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round((this.tablicaZdarzen.getTypI().getCzas() + (1.0) / this.lambda), 2)));
+        double deltaLambda = rozkladPoissona.lambda(this.lambda);
+        this.tablicaZdarzen.dodajDoTypuI(new Zdarzenie(1, round( (this.tablicaZdarzen.getTypI().getCzas() + deltaLambda), 2 ) ));
 
         this.rysujWykresy();
 

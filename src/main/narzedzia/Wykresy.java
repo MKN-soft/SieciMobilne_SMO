@@ -1,5 +1,6 @@
 package main.narzedzia;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ import java.util.List;
  * Created by MSI on 2015-12-19.
  */
 public class Wykresy {
+
+    private int IdStacji;
+    private String nazwaStacji;
 
     private PrintWriter wykres;
     private PrintWriter wykres1;    // Przyjście zgłoszenia do systemu
@@ -22,14 +26,21 @@ public class Wykresy {
     private List<Para> listaWykres5;
     private List<Para> listaWykres6;
 
-    public Wykresy() throws FileNotFoundException {
-        this.wykres = new PrintWriter("wykres.txt");
-        this.wykres1 = new PrintWriter("wykres1.txt");
-        this.wykres2 = new PrintWriter("wykres2.txt");
-        this.wykres3 = new PrintWriter("wykres3.txt");
-        this.wykres4 = new PrintWriter("wykres4.txt");
-        this.wykres5 = new PrintWriter("wykres5.txt");
-        this.wykres6 = new PrintWriter("wykres6.txt");
+    public Wykresy(int IdStacji) throws FileNotFoundException {
+        this.IdStacji = IdStacji;
+        this.nazwaStacji = "stacja" + this.IdStacji;
+
+
+        File dir = new File(this.nazwaStacji);
+        dir.mkdir();
+
+        this.wykres = new PrintWriter(this.nazwaStacji + "/wykres.txt");
+        this.wykres1 = new PrintWriter(this.nazwaStacji + "/wykres1.txt");
+        this.wykres2 = new PrintWriter(this.nazwaStacji + "/wykres2.txt");
+        this.wykres3 = new PrintWriter(this.nazwaStacji + "/wykres3.txt");
+        this.wykres4 = new PrintWriter(this.nazwaStacji + "/wykres4.txt");
+        this.wykres5 = new PrintWriter(this.nazwaStacji + "/wykres5.txt");
+        this.wykres6 = new PrintWriter(this.nazwaStacji + "/wykres6.txt");
 
         this.listaWykres4 = new ArrayList<>();
         this.listaWykres5 = new ArrayList<>();
