@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +13,9 @@ public class Klaster {
 
 
     public Klaster() {
+
+        list = new ArrayList<>();
+
         for (int i = 0; i < count; i++) {
             list.add(new SMO(i));
             Main.clear();
