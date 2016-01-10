@@ -110,13 +110,4 @@ public class Wykresy {
         this.listaWykres6.add(new Para(i, czas));
     }
 
-    class Para {
-        private int i;
-        private double v;
-
-        public Para(int i, double v) {
-            this.i = i;
-            this.v = v;
-        }
-    }
 }
